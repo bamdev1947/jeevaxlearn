@@ -9,6 +9,33 @@
         function showPaymentSteps() {
             document.getElementById("payment-steps").classList.remove("hidden");
         }
+
+      
+        // Initialize the slider
+        let currentSlide = 0;
+        function showSlide(index) {
+            const reviews = document.querySelectorAll('.review');
+            if (index >= reviews.length) currentSlide = 0;
+            if (index < 0) currentSlide = reviews.length - 1;
+            reviews.forEach((review, i) => {
+                review.classList.add('hidden');
+                if (i === currentSlide) review.classList.remove('hidden');
+            });
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(currentSlide);
+        });
     </script>
 </head>
 <body class="bg-gradient-to-r from-gray-100 to-gray-300">
@@ -29,7 +56,7 @@
             <h2 class="text-2xl font-bold text-gray-800">How to Get Access</h2>
             <ol class="mt-4 text-lg text-gray-700 space-y-3 text-left">
                 <li>💳 <strong>Step 1:</strong> Make a secure payment via PhonePay or GooglePay to below UPI</li>
-                    <li>💳 <strong>Step 2:</strong> <span class="font-bold text-blue-600">7978762785-3@ybl</span></li>
+                    <li>💳 <strong>Step 2:</strong> <span class="font-bold text-blue-600">7978762785-3@ybl | 9938731833@paytm</span></li>
                     <li>📧 <strong>Step 3:</strong> After payment, Mail your <span class="font-bold text-blue-600">(payment screenshot ,Name and Phone No)</span> to <span class="font-bold text-blue-600">jeevaxcourse@gmail.com</span>
                     </li>
                     <li>🔗 <strong>Step 4:</strong> Receive your unique product link instantly with material</li>
@@ -46,10 +73,16 @@
             </div>
         </div>
 
+        <div class="text-center my-12">
+            <h2 class="text-3xl font-bold text-gray-800">🚀🚀🚀 App features !!!</h2>
+        </div>
+
+
         <!-- Product Images -->
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 my-12">
-            <img src="dashboard.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Master Grammar Quiz (8 Topics)">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 my-22">
+            <img src="sell.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Master Grammar Quiz (8 Topics)">
             <img src="grammar.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Idioms & Phrases Practice">
+            <img src="oddoneout.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Idioms & Phrases Practice">
             <img src="grammarquiz.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Listening Practice">
             <img src="idiom.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Vocabulary Quiz">
             <img src="senetnce.png" class="rounded-4xl shadow-lg hover:scale-125 transition-transform" alt="Sentence Correction Quiz">
@@ -96,6 +129,61 @@
                 <button onclick="document.getElementById('payment-steps').classList.add('hidden')" class="mt-6 px-6 py-3 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600">Close</button>
             </div>
         </div>
+    </div>
+    <div class="max-w-6xl mx-auto p-8">
+
+    <section class="my-12 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-800 mb-8">What Our Learners Say</h2>
+        <div class="relative w-full max-w-3xl mx-auto">
+            <!-- Review Slider -->
+            <div class="overflow-hidden">
+                <div class="flex transition-transform duration-500" id="review-slider">
+                    <!-- Review 1 -->
+                    <div class="review px-4 py-6 bg-white rounded-xl shadow-xl max-w-md mx-auto">
+                        <div class="flex items-center justify-center mb-4">
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <p class="text-lg text-gray-700 italic mb-4">"This app made learning English so much fun and interactive! Highly recommend it."</p>
+                        <p class="font-bold text-gray-800">Rahul</p>
+                        <p class="text-gray-600">"I love how the lessons are updated every week, keeping the content fresh and exciting!"</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="review px-4 py-6 bg-white rounded-xl shadow-xl max-w-md mx-auto">
+                        <div class="flex items-center justify-center mb-4">
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <p class="text-lg text-gray-700 italic mb-4">"The quizzes are really helpful, and the app is easy to navigate. Worth every penny!"</p>
+                        <p class="font-bold text-gray-800">Rupesh</p>
+                        <p class="text-gray-600">"I can see a huge improvement in my vocabulary thanks to this app!"</p>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="review px-4 py-6 bg-white rounded-xl shadow-xl max-w-md mx-auto">
+                        <div class="flex items-center justify-center mb-4">
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <p class="text-lg text-gray-700 italic mb-4">"Great way to improve English skills. The sentence correction feature is my favorite!"</p>
+                        <p class="font-bold text-gray-800">Kabir</p>
+                        <p class="text-gray-600">"I especially love the weekly updates; it's like getting a new course every time!"</p>
+                    </div>
+                    <!-- Add 7 more reviews below -->
+                    <div class="review px-4 py-6 bg-white rounded-xl shadow-xl max-w-md mx-auto">
+                        <div class="flex items-center justify-center mb-4">
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <p class="text-lg text-gray-700 italic mb-4">"Excellent app for improving English grammar and vocabulary. Worth it!"</p>
+                        <p class="font-bold text-gray-800">Sukant</p>
+                        <p class="text-gray-600">"The idioms section was especially useful for sounding more fluent." </p>
+                    </div>
+                    <!-- Repeat similar review divs for the remaining reviews... -->
+                </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="flex justify-between mt-6">
+                <button onclick="prevSlide()" class="px-4 py-2 bg-gray-700 text-white rounded-full shadow-lg hover:bg-gray-800">❮</button>
+                <button onclick="nextSlide()" class="px-4 py-2 bg-gray-700 text-white rounded-full shadow-lg hover:bg-gray-800">❯</button>
+            </div>
+        </div>
+    </section>
     </div>
 </body>
 </html>
